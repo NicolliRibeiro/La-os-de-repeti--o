@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laços de repetição</title>
+</head>
+
+<body>
+    <script>
+ var maior = 0;
+        var menor = 0;
+        for (var i = 1; i <= 20; i++) {
+            var numero = parseInt(prompt("Digite seu número"));
+            if (numero > maior) {
+                maior = numero;
+            }
+ 
+            else if (numero < menor) {
+                menor = numero;
+            }
+        }
+   
+        alert("O menor número digitado foi: " + menor);
+        alert("O maior número digitado foi: " + maior);
+       
+        var result = "";
+for (var i = 150; i <= 300; i++) {
+  if (i % 2 !== 0) {
+    result += i + " ";
+  }
+}
+alert(result);
+
+        function mediaTurma() {
+            var mediasPonderadas = [];
+
+            for (var aluno = 1; aluno <= 3; aluno++) {
+
+                var nota1 = parseFloat(prompt(`Digite a primeira nota do aluno ${aluno}: `));
+                var nota2 = parseFloat(prompt(`Digite a segunda nota do aluno ${aluno}: `));
+                var nota3 = parseFloat(prompt(`Digite a terceira nota do aluno ${aluno}: `));
+                if (!isNaN(nota1) && !isNaN(nota2) && !isNaN(nota3)) {
+                    var mp = (nota1 * 2 + nota2 * 4 + nota3 * 3) / 9;
+                    mediasPonderadas.push(mp);
+                 alert(`Média poderada do aluno ${aluno} = ${mp.toFixed(2)}`);
+                } else {
+                    alert(`Notas inválidas para o aluno ${aluno}.`);
+                }
+            }
+            if (mediasPonderadas.length > 0) {
+                var somaMedias = mediasPonderadas.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0);
+                var mediaGeral = somaMedias / mediasPonderadas.length;
+                alert(`\n Média geral da turma: ${mediaGeral.toFixed(2)}`);
+            } else {
+                alert("Não deu para calcular a média da turma.")
+            }
+        }
+        mediaTurma();
+    </script>
+</body>
+
+</html>
